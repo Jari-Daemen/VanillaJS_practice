@@ -1,0 +1,1 @@
+Made to practice vanilla JS and get used to git version control
