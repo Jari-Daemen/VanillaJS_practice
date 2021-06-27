@@ -4,9 +4,21 @@ const time = new Date();
 
 setInterval(()=> {
     const time = new Date();
-    document.getElementById("hrs").innerText = time.getHours(); 
-    document.getElementById("mnts").innerText = time.getMinutes();
-    document.getElementById("scnds").innerText = time.getSeconds();
+    const hrs = time.getHours(); 
+    const mnts = time.getMinutes();
+    const scnds = time.getSeconds();
+    if (scnds < 10 && mnts < 10) {
+        document.getElementById("full").innerText = `${hrs}:0${mnts}:0${scnds}`
+    }  
+    else if(scnds < 10 ) {
+        document.getElementById("full").innerText = `${hrs}:${mnts}:0${scnds}`
+    }   
+    else if(mnts < 10 ) {
+        document.getElementById("full").innerText = `${hrs}:0${mnts}:${scnds}`
+    } 
+    else {
+    document.getElementById("full").innerText = `${hrs}:${mnts}:${scnds}`
+}
 }, 1000);
 
 // querySelector as alternative, or use classnames
